@@ -1,7 +1,6 @@
 const Router = require('koa-router');
 const fs = require('fs');
 const csv = require('csv-parser');
-const axios = require('axios');
 const httpRequest = require('../../services');
 
 const router = new Router();
