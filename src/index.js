@@ -2,10 +2,13 @@ const Koa = require('koa');
 const koaBody = require('koa-body');
 const router = require('./routers');
 const cors = require('koa2-cors');
+const logger = require('koa-logger');
 
 const PORT = 8000;
 
 const app = new Koa();
+
+app.use(logger());
 
 // body parser middleware
 app.use(koaBody({
