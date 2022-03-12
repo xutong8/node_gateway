@@ -4,7 +4,9 @@ const httpRequest = require('../../services');
 const router = new Router();
 
 router.post('/', async (ctx, next) => {
-  const res = await httpRequest.post('/search');
+  const { request } = ctx;
+  const reqBody = request?.body ?? {};
+  const res = await httpRequest.post('/search', reqBody);
   ctx.body = res?.data ?? {};
 });
 
